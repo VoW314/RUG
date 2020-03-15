@@ -3,7 +3,14 @@ import random
 import pynput
 import os
 from time import sleep
+
+print("1/1187856384 chances of getting 2 of the same people")
 #currently a 1/1187856384 chance of getting two of the same people
+'''
+if a array has a # in or after it then it means that the number of 
+items in that array has not been calculated into the chances yet
+'''
+
 gender = [
     "Male",
     "Female",
