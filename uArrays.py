@@ -25,6 +25,7 @@ print("Your Name?")
 uName = input()
 
 
+
 a = 1
 def loadBar():
     while (a >=10):
@@ -65,8 +66,66 @@ c = ["Yes", "No"]#
 
 company = [
     "Adobe",
+    "Alphabet",
+    "Berkshire Hathaway",
     "BioTech",
     "Cromwell's",
+    "JP Morgan Chase",
+    "Visa",
+    "Nestle",
+    "Samsung Electronics",
+    "Royal Dutch Shell",
+    "Nike",
+    "Pfizer",
+    "Wells Fargo",
+    "Apple",
+    "Cisco Systems",
+    "Rukus",
+    "Oracle",
+    "Comcast",
+    "BP",
+    "Cheveron",
+    "PayPal",
+    "GE",
+    "IBM",
+    "AIRBUS",
+    "Rio Tinto",
+    "TDankGroup",
+    "Ubisoft",
+    "Bethesda",
+    "Bungie",
+    "Linde",
+    "United Airlines",
+    "Delta Airlines",
+    "Emirates",
+    "Naspers",
+    "Medtronic",
+    "3M"
+    "Union Pacific",
+    "Ping An Insurance Group",
+    "Sinopec Group",
+    "China National Petroleum",
+    "Sasol",
+    "MTN Group",
+    "Eskom",
+    "ShopRite Holdings",
+    "ALFA",
+    "Branco Bradesco",
+    "Petrobras",
+    "Toyota Motors",
+    "TATA Motors",
+    "Huwawei",
+    "Verizon Communications",
+    "Intel",
+    "Mastercard",
+    "Home Depot",
+    "USPS",
+    "FedEx",
+    "Penguin Publishing",
+    "DELL",
+    "Yamaha",
+    "Staples",
+    ""
     "Dodge",
     "Elepaint",
     "Fortis Healthcare",
@@ -76,8 +135,10 @@ company = [
     "Jindal Steel and Power",
     "Kansas Oil",
     "Lithnic",
-    "Microsoft"
+    "Microsoft",
+    ""
     ]
+
 job = [
     "Retail",
     "Doctor",
@@ -85,23 +146,58 @@ job = [
     "IT",
     "Janitor",
     "Driver",
-    "Blue Collar Worker",
+    "Secretary",
+    "Engineer",
+    "Mailroom Worker",
+    "Data Entry Keyer",
+    "Credit Authorizer",
+    "Gardener",
+    "Foreman",
+    "Accountant",
+    "Auditor",
+    "Logistician",
+    "Marketing Research",
+    "Personal Finance Advisor",
+    "Customer Support",
+    "Employer",
+    "Data Architect",
+    "Budget Analysis",
     "Construction Worker",
     "Chemist",
     "Biologist",
-    "Employer"
+    "Employer",
+    "Cost Estimator",
+    "Legal Analysist",
+    "Legal Manager",
+    "Cyber Specialist",
+    "Security Guard",
+    "Union Rep.",
+    "Human Resources Rep.",
+    "Human Resources Manager",
+    "Gardener foreman",
+    "Business Policy Enforcer",
+    "Translator",
+    "Website Designer"
     ]
 bloodType = ["A+", "B+", "AB+", "A-", "B-", "AB-", "O+", "O-"]
 
 #maidenName stuff 
-lastN = ""
+lastN = [""]
 def lastNames():
-    if (country =="Chile" or "Argentina" or "Ecuador"):
-        lastN = "Lopez"
-    if(country =="India" or "Pakistan"):
-        lastN = "Devi"
+    if (country =="Chile" or "Argentina" or "Ecuador" or "Spain"):
+        lastN = ["Alcón","García","Fernández","Rodríguez","Gonzalez","Diaz","Muñoz","Sanchez","Lopez","Zambrano"]
+        
+    elif(country =="India" or "Pakistan" or "Nepal" or "Bhutan" or "Bangladesh"):
+        lastN =  ["Reddy", "Patel", "Devi", "Akvu", "Abidi", "Baqri","Farooqi", "Singh"]
+        
+    elif(country == "Belarus" or "Georgia" or "Kazakhstan" or "Russia"):
+        lastN = ["Ivanov", "Oao", "Zao", "Zhuk", "Rup"]
+        
+    elif(country=="Germany" or "France"or "Italy" or "Papal State"):
+        lastN = ["Muller", "Schmidth","Berger", "Chervolet", "Bisset", "Russo", "Ricci", "Colombo", "Esposito", "Abella"]
+         
     else:
-        lastN = "Muller"
+        lastN = "Whoop de doo"
 
 
 
@@ -110,8 +206,10 @@ country = [
     "Afghanistan",
     "Argentina",
     "Bahamas",
+    "Bangladesh",
     "Belarus",
     "Belguim",
+    "Bhutan",
     "Canada",
     "Chad",
     "Chile",
@@ -121,7 +219,7 @@ country = [
     "Ecuador",
     "Estonia",
     "Finland",
-    "Fracne",
+    "France",
     "Georgia",
     "Germany",
     "Guyana",
@@ -139,10 +237,12 @@ country = [
     "Maldives",
     "Mexico",
     "Mongolia",
+    "Nepal",
     "New Zealand",
     "Nigeria",
     "Oman",
     "Pakistan",
+    "Papal State",
     "Qatar",
     "Russia",
     "Rwanda",
@@ -150,6 +250,7 @@ country = [
     "Saudi Arabia",
     "Serbia",
     "South Korea",
+    "Spain",
     "Turkey",
     "Thailand",
     "Ukraine",
@@ -183,11 +284,15 @@ x = int(input())
 print("file has been edited. Open now")
 top=print("ID CREATED AT",now, "by", uName)
 print()
+tad = 0
 
 sys.stdout = open('People.txt' , "w")
+
 def createID():
+    top=print("ID CREATED AT",now, "by", uName)
     print('AGE:', random.choice(random.choice(ages)))
     #f.write('OCCUPATION:',random.choice(job)
+    random.choice(random.choice(country))
     print('OCCUPATION:',random.choice(job))
     print('GENDER:',random.choice(gender))
     print('COMPANY:',random.choice(company))
@@ -195,7 +300,7 @@ def createID():
     print('COUNTRY:',random.choice(country))
     #lastNames()
     print('RACE:',random.choice(race))
-    print('MOTHERS MAIDEN NAME:',(lastN))
+    print('MOTHERS MAIDEN NAME:',(lastNames()))
     print("")
 
     print("FAMILY")
@@ -212,7 +317,6 @@ def createID():
     print("_____________________________")
     print()
 
-    
 count = 1
 while (count <=x):
     count = count + 1
@@ -223,12 +327,10 @@ sys.stdout.close()
 
 #notes
 '''
-    UID will put in a .txt file
-    It will then proceed to encrypt the file
-    so that only other devices with the script
-    can open it
+    rework Maiden Name code
 
-    Also if possible put in a locked 7 zip folder using the common pass
+    organize code better(eh...)
 
-    organize code better
+    find a better purpose for the fernet
+
 '''
