@@ -8,21 +8,18 @@ import sys
 import textwrap
 import os
 from os.path import join as pjoin
-#cryptography
 
 #write to file
 from sys import stdout
 
 #code Actual
 
+with open ("people.txt", "r") as file:
+    lastLine = file.readline()
+    for lastLine in file:
+        pass
 
-'''
-key = Fernet.generate_key()
-print(key)
-file = open('key.key', 'wb')
-file.write(key)
-file.close()
-'''
+
 print('WELCOME TO Random User Generator (RUG)')
 time.sleep(1)
 
@@ -93,11 +90,14 @@ color = [
 ]
 
 
-gender = [ #make smaller chance of getting the vehicles
+gender = [ 
     "Male",
     "Female",
+    "Male",
+    "Male",
+    "Female",
+    "Female",
     "Apache Helicopter",
-    "A-10 Warthog",
     "Other"
     ]
 
@@ -126,7 +126,7 @@ heliNames= [
     "AH-64/D Apache"
     ]
 
-c = ["Yes", "No"]#
+c = ["Yes", "No"]
 company = [
     "Adobe",
     "Alphabet",
@@ -201,6 +201,9 @@ company = [
     "Fox News",
     "MSNBC",
     "ABC",
+    "Vox",
+    "Vice",
+    "Buzfeed"
     "Blaze News",
     "Epoch Times",
     "Washington Times",
@@ -208,6 +211,7 @@ company = [
     "Discover",
     "National Geographic",
     "Insignia",
+    "Starch Press"
     "Reynolds Wraps",
     "Clorox",
     "Oxi-clean",
@@ -225,7 +229,7 @@ company = [
     "Lenovo"
     ]
 
-warNames = ['brrrrrrt', 'BRRRRRTT', 'COMMUNISM WAS NEVER AN OPTION']
+
 
 job = [
     "Retail",
@@ -269,13 +273,6 @@ job = [
     ]
 bloodType = ["A+", "B+", "AB+", "A-", "B-", "AB-", "O+", "O-"]
 
-heliThings = [
-    "STILL MORE NATIVE AMERICAN THAN SEN. ELIZABETH WARREN",
-    "NOTHING'S MORE POWERFUL THAN A CHILD'S WISHES ... EXCEPT AN APACHE HELICOPTER",
-    "Supply deliver",
-    "Helicopter right's activist",
-    "RTRTRTRTRTRTRTRTRTR"
-    ]
 
 country = [
     "Afghanistan",
@@ -351,29 +348,6 @@ yan3 = randint(1000,9999)
 
 
 
-#last names
-'''
-lastN = [""]
-def lastNames():
-    if (country =="Chile" or "Argentina" or "Ecuador" or "Spain"):
-        lastN = ["Alcón","García","Fernández","Rodríguez","Gonzalez","Diaz","Muñoz","Sanchez","Lopez","Zambrano"]
-        random.choice(lastN)
-
-    elif(country =="India" or "Pakistan" or "Nepal" or "Bhutan" or "Bangladesh"):
-        lastN =  ["Reddy", "Patel", "Devi", "Akvu", "Abidi", "Baqri","Farooqi", "Singh"]
-        random.choice(lastN)
-
-    elif(country == "Belarus" or "Georgia" or "Kazakhstan" or "Russia"):
-        lastN = ["Ivanov", "Oao", "Zao", "Zhuk", "Rup"]
-        random.choice(lastN)
-
-    elif(country=="Germany" or "France"or "Italy" or "Papal State"):
-        lastN = ["Muller", "Schmidth","Berger", "Chervolet", "Bisset", "Russo", "Ricci", "Colombo", "Esposito", "Abella"]
-        random.choice(lastN)
-
-    else:
-        pass
-'''
 ideology = [
     "absolutism",
     "anarchism",
@@ -407,7 +381,19 @@ sys.stdout = open('People.txt' , "w")
 top=print("ID CREATED AT",now, "by", uName)
 print('________________')
 
-
+# work on the IOError in case the person doesn't want to continue. 
+'''
+print("Last time",lastLine)
+print("Are you sure you want to continue Y/N")
+print("if no then I will error to kill this shell")
+choice = input()
+try:
+    if ((choice == "Y") or (choice =="Yes")):
+        pass
+except:
+        except IOError as e:
+        print("IOError".format(e.errno, e.strerror))
+'''
 def createID():
     print()
     random.choice(country)
@@ -416,25 +402,19 @@ def createID():
     random.choice(random.choice(country))
     gendy=random.choice(gender)
     print('GENDER:',gendy)
-    if (gendy=="Apache Helicopter"):
-        jargoon = random.choice(heliThings)
-    else:
-        jargoon = random.choice(job)
+  
     
-    print('OCCUPATION:',jargoon)
+    
 
     #name stuff
-    
+    #jargon is just a variable name I thought sounded funny
     if(gendy=='Male'):
         jargon = names.get_full_name(gender='male')
     elif(gendy=='Female'):
         jargon = names.get_full_name(gender='female')
     elif(gendy=='Other'):
         jargon = names.get_full_name()
-    elif(gendy=='Apache Helicopter'):
-        jargon = random.choice(heliNames)
-    elif(gendy=='A-10 Warthog'):
-        jargon = random.choice(warNames)
+
     
     print('LEGAL NAME:',jargon)
     jargan = (jargon+random.choice(mail))
@@ -483,15 +463,14 @@ sys.stdout.close()
 
 #notes
 '''
-    rework gender and names 
+work on the ability to read the text files to see how many ID's were created in case person wants
+to save it
 
-    organize code better(eh...)
-    
-    Use similar code for all the txt files:
-    https://github.com/sbtnRey/Random-Animal-Generator/blob/master/randomAnimalGen.py
-    making arrays in txt files will conserve space
-    
-    find a better purpose for the fernet
+Could probably use esc as
 
+if key == Key.esc:
+    return False
+
+but it would require me to import pynput. Importing pynput for this only doesn't seem like a good idea. 
 '''
 
